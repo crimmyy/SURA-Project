@@ -1,0 +1,20 @@
+{
+  "name": "sura-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "three": "^0.166.1",
+    "vite": "^5.3.4"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.6"
+  }
+}
