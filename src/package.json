@@ -11,6 +11,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@alpinejs/collapse": "^3.14.1",
+    "alpinejs": "^3.14.1",
+    "gsap": "^3.12.5",
     "three": "^0.166.1",
     "vite": "^5.3.4"
   },
