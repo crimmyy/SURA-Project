@@ -34,13 +34,13 @@ scene.add(directionalLight);
 
 // Asset management
 const assets = {
-    bananaTree: { instance: null, url: new URL('glb/bananatree.glb', import.meta.url), targetPosition: new THREE.Vector3(13, 8, 40), scale: 3 },
-    campfire: { instance: null, url: new URL('glb/campfire.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 8, 40), scale: 2 },
-    balm: { instance: null, url: new URL('glb/balm.glb', import.meta.url), targetPosition: new THREE.Vector3(5, 9, 50), scale: 2 },
-    newHomes: { instance: null, url: new URL('glb/newhomes.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 0, 0), scale: 1 },
-    roadway: { instance: null, url: new URL('glb/roadway.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 0, 0), scale: 1 },
-    question: { instance: null, url: new URL('glb/question.glb', import.meta.url), targetPosition: new THREE.Vector3(0, -10, 0), scale: 10 },
-    theNorm: { instance: null, url: new URL('glb/thenorm.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 0, 0), scale: 1 }
+    bananaTree: { instance: null, url: new URL('public/glb/bananatree.glb', import.meta.url), targetPosition: new THREE.Vector3(13, 8, 40), scale: 3 },
+    campfire: { instance: null, url: new URL('public/glb/campfire.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 8, 40), scale: 2 },
+    balm: { instance: null, url: new URL('public/glb/balm.glb', import.meta.url), targetPosition: new THREE.Vector3(5, 9, 50), scale: 2 },
+    newHomes: { instance: null, url: new URL('public/glb/newhomes.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 0, 0), scale: 1 },
+    roadway: { instance: null, url: new URL('public/glb/roadway.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 0, 0), scale: 1 },
+    question: { instance: null, url: new URL('public/glb/question.glb', import.meta.url), targetPosition: new THREE.Vector3(0, -10, 0), scale: 10 },
+    theNorm: { instance: null, url: new URL('public/glb/thenorm.glb', import.meta.url), targetPosition: new THREE.Vector3(0, 0, 0), scale: 1 }
 };
 
 const assetStatus = {
