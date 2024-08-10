@@ -30,8 +30,6 @@ const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
 directionalLight.position.set(5, 10, 7.5);
 scene.add(directionalLight);
 
-
-
 // Asset management
 const assets = {
     bananaTree: { instance: null, url: '/glb/bananatree.glb', targetPosition: new THREE.Vector3(13, 8, 40), scale: 3 },
@@ -42,7 +40,6 @@ const assets = {
     question: { instance: null, url: '/glb/question.glb', targetPosition: new THREE.Vector3(0, -10, 0), scale: 10 },
     theNorm: { instance: null, url: '/glb/thenorm.glb', targetPosition: new THREE.Vector3(0, 0, 0), scale: 1 }
 };
-
 
 const assetStatus = {
     bananaTree: { loading: false, removing: false },
@@ -59,7 +56,7 @@ function loadAsset(name) {
     if (!asset.instance && !assetStatus[name].loading) {
         assetStatus[name].loading = true;
         const loader = new GLTFLoader();
-        loader.load(asset.url.href, (gltf) => {
+        loader.load(asset.url, (gltf) => {
             asset.instance = gltf.scene;
             asset.instance.position.copy(asset.targetPosition);
             asset.instance.scale.set(asset.scale, asset.scale, asset.scale); // Apply scale
@@ -162,7 +159,7 @@ function updateAssetsForIndex(index) {
 
 // Load the initial GLTF model
 const assetLoader = new GLTFLoader();
-const village = new URL('thenorm.glb', import.meta.url);
+const village = new URL('/glb/thenorm.glb', import.meta.url);
 let mixer;
 
 // Animate the scene
