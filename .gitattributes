@@ -1,4 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.glb filter=lfs diff=lfs merge=lfs -text
+
+# Treat .glb files as binary to prevent line ending conversion
+*.glb binary
+
+# Treat .pdf files as binary and use Git LFS for handling large files
 *.pdf filter=lfs diff=lfs merge=lfs -text
