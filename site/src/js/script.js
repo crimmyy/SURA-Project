@@ -73,7 +73,7 @@ scene.add(fillCircle); // Add the fill circle to the scene
 // Show loading animation
 function startLoadingAnimation() {
     fillCircle.scale.set(0, 0, 1); // Reset scale for animation
-    gsap.to(fillCircle.scale, { x: 1, y: 1, duration: 1, ease: "power1.out" }); // Expand radius
+    gsap.to(fillCircle.scale, { x: 1, y: 1, duration: 5, ease: "power1.out" }); // Expand radius
 }
 
 // Stop loading animation
