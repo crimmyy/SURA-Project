@@ -70,17 +70,44 @@ fillCircle.position.set(0, 0, 2); // Center of the canvas
 fillCircle.scale.set(0, 0, 0); // Start with scale of (0, 0, 1) for radius effect
 scene.add(fillCircle); // Add the fill circle to the scene
 
+// Create a canvas for text
+const canvas = document.createElement('canvas');
+const context = canvas.getContext('2d');
+canvas.width = 1600; // Set width
+canvas.height = 400; // Set height
+context.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas to make the background transparent
+context.fillStyle = 'black'; // Change text color to white for better visibility
+context.font = 'bold 192px Georgia';
+context.textAlign = 'center';
+context.textBaseline = 'middle';
+context.fillText('Drag to Move', canvas.width / 2, canvas.height / 2 + 110);
+context.fillText('Scroll to Zoom', canvas.width / 2, canvas.height / 2 - 100);
+
+// Create texture from canvas
+const texture = new THREE.Texture(canvas);
+texture.needsUpdate = true;
+
+// Create a plane to display the text
+const textMaterial = new THREE.MeshBasicMaterial({ map: texture, transparent: true, side: THREE.DoubleSide }); // Set transparent to true
+const textGeometry = new THREE.PlaneGeometry(30, 10); // Set the plane size
+const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+textMesh.position.set(0, 0, 5); // Slightly in front of the loader circle
+scene.add(textMesh); // Add text mesh to the scene
+
 // Show loading animation
 function startLoadingAnimation() {
     fillCircle.scale.set(0, 0, 1); // Reset scale for animation
-    gsap.to(fillCircle.scale, { x: 1, y: 1, duration: 5, ease: "power1.out" }); // Expand radius
+    gsap.to(fillCircle.scale, { x: 1, y: 1, duration: 8, ease: "power1.out" }); // Expand radius
+    textMesh.visible = true; // Show text during loading
 }
 
 // Stop loading animation
 function stopLoadingAnimation() {
     scene.remove(loaderCircle);
     scene.remove(fillCircle);
+    textMesh.visible = false; // Hide text when loading is done
 }
+
 
 function loadAsset(name) {
     const asset = assets[name];
